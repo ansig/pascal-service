@@ -1,14 +1,12 @@
 package se.ansig.sample.spring.pascal;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CalculatorController {
 
-    @RequestMapping("/pascal/row")
-    public PascalRow pascalRow(@RequestParam(value="n", defaultValue="1") Integer n) {
+    @RequestMapping(value = "/pascal/row/{n}", method = RequestMethod.GET)
+    public PascalRow pascalRow(@PathVariable Integer n) {
         return new PascalRow(Calculator.pascalRow(n));
     }
 }
