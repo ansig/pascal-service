@@ -42,3 +42,6 @@ Once the service has been  built and started, it can be accessed on either the d
 $ curl localhost:8080/pascal/row/6
 {"numbers":[1,5,10,10,5,1]}
 ```
+
+## Kubernetes
+kubectl cheat sheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
