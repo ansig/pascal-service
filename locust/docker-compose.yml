@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    pascal:
+        image: se.ansig.sample.spring/pascal-service:latest
+        ports:
+            - "8081:8080"
+    locust:
+        build: ./
+        ports:
+            - "8089:8089"
+        command: ["-f", "locustfile.py", "--host=http://pascal:8080"]
